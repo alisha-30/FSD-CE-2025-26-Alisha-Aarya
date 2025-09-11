@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 6</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #bush {
+      width: 500px;
+      min-height: 400px;
+      background-color: darkolivegreen;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .header img {
+      position: absolute;
+      left: 0;
+      height: 80px;
+      width: 80px;
+    }
+
+    .header h2 {
+      flex: 1;
+      text-align: center;
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .counter-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    button {
+      font-size: 28px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      color: darkolivegreen;
+      font-weight: bold;
+      
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ddd;
+    }
+
+    #counter {
+      font-size: 36px;
+      font-weight: bold;
+      background: #fff;
+      color: darkolivegreen;
+      padding: 15px 40px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="bush">
+    <div class="header">
+      <img src="color.jpeg" alt="logo" style="border-radius: 40px;">
+      <h2>Counter APP</h2>
+    </div>
+
+    <div class="counter-box">
+      <button onclick="decrease()">-</button>
+      <span id="counter">0</span>
+      <button onclick="increase()">+</button>
+    </div>
+  </div>
+
+  <script>
+    let counter = document.getElementById("counter");
+    let count = 0;
+
+    function increase() {
+      if (count < 10) {
+        count++;
+        counter.innerHTML = count;
+      } else {
+        alert("Maximum limit reached!");
+      }
+    }
+
+    function decrease() {
+      if (count > 0) {
+        count--;
+        counter.innerHTML = count;
+      } else {
+        alert("Minimum limit reached!");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+</head>
+<body style="background-color:lavender;font-family:Arial,Helvetica, sans-serif;">
+
+    <!-- Navbar -->
+    <div style="height:60px; background: linear-gradient(to right, purple, indigo); color:white; display:flex; align-items:center;justify-content:space-between;padding:0 20px;">
+      <!-- Left -->
+      <div>
+        <img style="border-radius:50%;" src="/redbus.png" alt="logo" height="60px" width="60px">
+      </div>
+      <!-- Center -->
+      <div style="flex:1; text-align:center; font-size:26px;">Book Sheet</div>
+      <!-- Right (empty for balance, optional) -->
+      <div style="width:40px;"></div>
+    </div>
+
+    <br>
+      <!-- Centered Box -->
+    <div style="width:500px; height:500px; border: 1px solid black;background: linear-gradient(to bottom right, lightblue, lightskyblue);
+    margin: auto; margin-top: 50px; padding: 20px; color:black; border-radius:15px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3);">
+
+      <h2 style="text-align: center; color:darkblue; text-decoration:underline;">Welcome to Bus Booking System</h2>
+      <h3 style="text-align:center;">Payment Page</h3><br>
+      <table style="width: 100%;">
+       <tr>
+        <!-- Form Cell -->
+        <td style="vertical-align: top; width: 60%;">
+
+         <form style="width:100%;">
+
+          <!--Radio-->
+          <label style="font-weight:bold;">Select Payment Mode:</label>
+          <br><br>
+          <input type="radio" name="payment" value="upi" style="margin-bottom:10px;">
+          <label>UPI</label><br>
+          <input type="radio" name="payment" value="card" style="margin-bottom:10px;">
+          <label>Debit/Credit Card</label><br>
+          <input type="radio" name="payment" value="netbanking" style="margin-bottom:10px;">
+          <label>Net Banking</label><br>
+          <input type="radio" name="payment" value="wallet" style="margin-bottom:10px;">
+          <label>Wallet</label><br><br><br>
+
+          <!--Button-->
+          <button style="background-color:purple; color:white; padding:8px 20px; border:none; border-radius:5px;" type="submit">Pay Now</button>
+      
+          </form>
+        </td>
+
+        <!-- Image Cell -->
+        <td style="text-align: center;">
+          <img src="/bus.jpg" alt="bus image" style="height: 200px; width: 200px; border-radius:15px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3);">
+        </td>
+      </tr>
+     </table>
+     <h3 style="text-align:center; margin-top:30px; color:darkgreen;font-style:italic; text-shadow:1px 1px 2px lightcyan;">Thank You for using our services!</h3>
+    </div>
+    <!-- Footer -->
+    <div style="text-align:center; margin-top:20px; font-size:14px; color:gray;">
+        © 2025 Bus Booking System | Contact: support@busco.com
+    </div>
+</body>
+</html>

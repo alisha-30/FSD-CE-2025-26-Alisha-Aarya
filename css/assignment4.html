@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flipkart Navbar</title>
+      <style>
+        body {
+            background-color: lavender;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar {
+            height: 60px;
+            background:#2874f0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-center {
+            flex: 1;
+            text-align: center;
+        }
+        .navbar-center input {
+            width: 60%;
+            padding: 8px;
+            border: none;
+            border-radius: 2px;
+        }
+        .navbar-center button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 2px;
+            background-color: #ffe500; 
+            color: #2874f0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .navbar-right {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .navbar-right a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .navbar-right a:hover {
+            color: #ffe500;
+        }
+        .categories {
+            background: #f1f3f6;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .category {
+            background-color: white;
+            font-size: 12px;
+            padding: 10px;
+            margin: 0 25px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .category img {
+            border-radius: 10%;
+            margin-top: 5px;
+            height:80px;
+            width:100%;
+            margin-bottom: 5px;
+        }
+        .category:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <!-- Left -->
+      <div class="navbar-left">
+        <img style="border-radius:4px;" src="flipkart.png" alt="logo" height="60px" width="60px">
+        <span style="margin-left:10px; font-weight:bold;font-size: 20px;">Flipkart</span>
+      </div>
+      <!-- Center -->
+      <div class="navbar-center">
+        <input type="text" placeholder="Search for Products, Brands and More">
+        <button>Search</button>
+      </div>
+      <!-- Right -->
+      <div class="navbar-right">
+         <a href="#">Login</a>
+         <a href="#">Cart</a>
+         <a href="#">Become a seller</a>
+      </div>
+    </div>
+    
+      <!-- Categories -->
+    <div class="categories">
+        <div class="category">
+            <img src="minutes.png" alt="Minutes"> Minutes
+        </div>
+        <div class="category">
+            <img src="mobiles.png" alt="Mobiles & Tablets"> Mobiles & Tablets</div>
+        <div class="category">
+            <img src="fashion.jpg" alt="Fashion"> Fashion</div>
+        <div class="category">
+            <img src="electronics.jpg" alt="Electronics"> Electronics</div>
+        <div class="category">
+            <img src="furniture.jpeg" alt="Home & Furniture"> Home & Furniture</div>
+        <div class="category">
+            <img src="tv.jpg" alt="TVs & Appliances"> TVs & Appliances</div>
+        <div class="category">
+            <img src="flight.jpeg" alt="Flight Bookings"> Flight Bookings</div>
+        <div class="category">
+            <img src="beauty.jpg" alt="Beauty & Personal Care"> Beauty & Personal Care</div>
+        <div class="category">
+            <img src="Grocery.jpg" alt="Grocery"> Grocery</div>
+    </div>
+     
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Booking System</title>
+</head>
+<body style="background-color:lavender;font-family:Arial,Helvetica, sans-serif;">
+
+    <!-- Navbar -->
+    <div style="height:60px; background: linear-gradient(to right, purple, indigo); color:white; display:flex; align-items:center;justify-content:space-between;padding:0 20px;">
+      <!-- Left -->
+      <div>
+        <img style="border-radius:50%;" src="/redbus.png" alt="logo" height="60px" width="60px">
+      </div>
+      <!-- Center -->
+      <div style="flex:1; text-align:center; font-size:26px;">Book Sheet</div>
+      <!-- Right (empty for balance, optional) -->
+      <div style="width:40px;"></div>
+    </div>
+
+    <br>
+      <!-- Centered Box -->
+    <div style="width:500px; height:500px; border: 1px solid black;background: linear-gradient(to bottom right, lightblue, lightskyblue); margin: auto; margin-top: 50px; padding: 20px; color:black; border-radius:15px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3);">
+
+      <h2 style="text-align: center; color:darkblue; text-decoration:underline;">Welcome to Bus Booking System</h2>
+    
+      <table style="width: 100%;">
+       <tr>
+        <!-- Form Cell -->
+        <td style="vertical-align: top; width: 60%;">
+
+         <form style="width:100%;">
+
+          <h3 style="color:darkmagenta;">User Details</h3>
+          <label>User Name</label><br>
+          <input type="text" style="padding:8px; border-radius:5px; border:1px solid gray;width:90%;"><br><br>
+          <label>User Password</label><br>
+          <input type="password" style="padding:8px; border-radius:5px; border:1px solid gray;width:90%;"><br><br>
+        
+          <!--Radio-->
+          <label>User Gender</label>
+          <br>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br><br>
+        
+          <!--Select-->
+          <label>User City</label><br>
+          <select style="padding:6px; border-radius:5px; border:1px solid gray;width: 95%;">
+            <option>--Select your city--</option>
+            <option>Delhi</option>
+            <option>GZB</option>
+            <option>Noida</option>   
+          </select>
+          <br><br><br>
+
+          <!--Button-->
+          <button style="background-color:purple; color:white; padding:8px 20px; border:none; border-radius:5px" type="button" onclick="window.location.href='BookSheet.html'">BookSheet</button>
+      
+        </form>
+      </td>
+
+      <!-- Image Cell -->
+      <td style="text-align: center;">
+        <img src="/bus.jpg" alt="bus image" style="height: 200px; width: 200px; border-radius:15px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3);">
+      </td>
+     </tr>
+    </table>
+  </div>
+  <!-- Footer -->
+    <div style="text-align:center; margin-top:20px; font-size:14px; color:gray;">
+        © 2025 Bus Booking System | Contact: support@busco.com
+    </div>
+</body>
+</html>
