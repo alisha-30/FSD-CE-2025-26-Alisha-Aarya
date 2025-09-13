@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Change Example</title>
   <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: lavenderblush;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
     .box {
-      width: 260px;
-      margin: 40px auto;
-      text-align: center;
-      border: 1px solid #999;
-      padding: 12px;
-      border-radius: 8px;
-    }
-    img {
       width: 100%;
-      height: 60%;
-      margin-bottom: 10px;
+      max-width: 500px;
+      background-color: blanchedalmond;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      text-align: center;
     }
-    button {
-      padding: 6px 12px;
+
+    .image-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .button-container {
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    .button-container button {
+      width: 130px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
       cursor: pointer;
-      border: 1px solid #666;
-      border-radius: 4px;
-      background: #f2f2f2;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background: #e2e2e2;
+
+    .button-container button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
+
   <div class="box">
-    <img id="pic" src="beauty.jpeg" alt="demo">
-    <button onclick="changeImage()">Change Image</button>
+    <div class="image-container">
+      <img id="pic" src="color.jpeg" alt="Demo Image" />
+    </div>
+    <div class="button-container">
+      <button onclick="changeImage()">Change Image</button>
+    </div>
   </div>
 
   <script>
-    let flag = true;
     function changeImage() {
-      const img = document.getElementById("pic");
-      if (flag) {
-        img.src = "image.jpg"; 
-      } else {
-        img.src = "abes logo.jpg"; 
-      }
-      flag = !flag;
+    const img = document.getElementById("pic");
+
+    if (img.src.includes("color.jpeg")) {
+      img.src = "beauty.jpeg";
+    } else {
+      img.src = "color.jpeg";
     }
+    
+   }
   </script>
+
 </body>
 </html>

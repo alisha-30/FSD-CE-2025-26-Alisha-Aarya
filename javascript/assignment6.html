@@ -1,120 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 6</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Counter App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fdf6e3;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff3c4;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
 
-    #bush {
-      width: 500px;
-      min-height: 400px;
-      background-color: darkolivegreen;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      color: white;
-    }
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .header img {
-      position: absolute;
-      left: 0;
-      height: 80px;
-      width: 80px;
-    }
-
-    .header h2 {
-      flex: 1;
-      text-align: center;
-      font-size: 40px;
-      margin: 0;
-    }
-
-    .counter-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    button {
-      font-size: 28px;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 10px;
-      background-color: #fff;
-      color: darkolivegreen;
-      font-weight: bold;
-      
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      background-color: #ddd;
-    }
-
-    #counter {
-      font-size: 36px;
-      font-weight: bold;
-      background: #fff;
-      color: darkolivegreen;
-      padding: 15px 40px;
-      border-radius: 12px;
-    }
-  </style>
+        }
+        .counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;    
+        }
+        .counter-display {
+            font-size: 36px;
+            font-weight: bold;
+            width: 60px;
+            color: #444;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            border: none;
+            border-radius: 12px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: #fff;
+            
+        }
+        .button:hover {
+            background-color:#e0e0e0;
+        }
+    </style>
 </head>
 <body>
-  <div id="bush">
-    <div class="header">
-      <img src="color.jpeg" alt="logo" style="border-radius: 40px;">
-      <h2>Counter APP</h2>
+       <div class="card">
+        <div class="header">
+            <img src="color.jpeg" alt="Logo" class="logo"/>
+            <div class="title">Counter App</div>
+        </div>
+
+        <div class="counter">
+            <button class="button" onclick="decrement()">−</button>
+            <span class="counter-display" id="counter">0</span>
+            <button class="button" onclick="increment()">+</button>
+        </div>
     </div>
 
-    <div class="counter-box">
-      <button onclick="decrease()">-</button>
-      <span id="counter">0</span>
-      <button onclick="increase()">+</button>
-    </div>
-  </div>
+    <script>
+        let count = 0;
+        const counter = document.getElementById('counter');
+        const maxLimit = 10;
+        const minLimit = 0;
 
-  <script>
-    let counter = document.getElementById("counter");
-    let count = 0;
+        function increment() {
+            if (count >= maxLimit) {
+                alert("Maximum limit reached!");
+                return;
+            }
+            count++;
+            counter.textContent = count;
+        }
 
-    function increase() {
-      if (count < 10) {
-        count++;
-        counter.innerHTML = count;
-      } else {
-        alert("Maximum limit reached!");
-      }
-    }
-
-    function decrease() {
-      if (count > 0) {
-        count--;
-        counter.innerHTML = count;
-      } else {
-        alert("Minimum limit reached!");
-      }
-    }
-  </script>
+        function decrement() {
+            if (count <= minLimit) {
+                alert("Minimum limit reached!");
+                return;
+            }
+            count--;
+            counter.textContent = count;
+        }
+    </script>
 </body>
 </html>
