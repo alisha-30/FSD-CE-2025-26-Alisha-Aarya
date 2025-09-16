@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Branch Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:whitesmoke;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .card {
+      width: 300px;
+      background-color: white;
+      padding: 20px;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .common {
+      border-left: 6px solid #00796b;
+      background-color: #e0f7fa;
+    }
+
+    .uncommon {
+      border-left: 6px solid #e65100;
+      background-color: #fff3e0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="commonCard" class="card common">
+    <h2>Common Branch: CE</h2>
+    <ul id="commonList"></ul>
+  </div>
+
+  <div id="uncommonCard" class="card uncommon">
+    <h2>Uncommon Branches</h2>
+    <ul id="uncommonList"></ul>
+  </div>
+
+  <script>
+    const students = [
+      { name: "Aarav", roll: "101", branch: "CE" },
+      { name: "Isha", roll: "102", branch: "CE" },
+      { name: "Rohan", roll: "103", branch: "CSE" },
+      { name: "Meera", roll: "104", branch: "IT" },
+      { name: "Kabir", roll: "105", branch: "CE" }
+    ];
+
+    const commonBranch = "CE";
+    const commonList = document.getElementById("commonList");
+    const uncommonList = document.getElementById("uncommonList");
+    // Loop through each student
+    for (let i = 0; i < students.length; i++) {
+      const student = students[i];
+      const li = document.createElement("li");
+      li.textContent = student.name + " - Roll: " + student.roll;
+
+      // Check branch and append accordingly
+      if (student.branch === commonBranch) {
+        commonList.appendChild(li);
+      } else {
+        li.textContent += " (" + student.branch + ")";
+        uncommonList.appendChild(li);
+      }
+    }
+  </script>
+
+</body>
+</html>
