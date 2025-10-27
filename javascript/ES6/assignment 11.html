@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    #inputContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>To-Do List</h2>
+    <h3>Add Task</h3>
+    <div id="inputContainer">
+      <div class="input-row">
+        <input type="text" placeholder="Enter task">
+        <button onclick="addInput()">+</button>
+      </div>
+    </div>
+    <br>
+    <button onclick="showTasks()">List All</button>
+  </div>
+
+  <div id="taskCart" class="card" style="display:none;">
+    <h2>To-Do List</h2>
+    <h4>All Tasks:</h4>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addInput() {
+      const container = document.getElementById('inputContainer');
+      const row = document.createElement('div');
+      row.className = 'input-row';
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'Enter task';
+
+      const btn = document.createElement('button');
+      btn.textContent = '+';
+      btn.onclick = addInput;
+
+      row.appendChild(input);
+      row.appendChild(btn);
+      container.appendChild(row);
+    }
+
+    function showTasks() {
+      const inputs = document.querySelectorAll('#inputContainer input');
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+
+      inputs.forEach(input => {
+        const task = input.value.trim();
+        if (task !== '') {
+          const li = document.createElement('li');
+          li.textContent = task;
+          list.appendChild(li);
+        }
+      });
+
+      document.getElementById('taskCart').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

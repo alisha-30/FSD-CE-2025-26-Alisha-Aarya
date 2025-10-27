@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        //callback hell means nested callback
+        //drawback h ki code complex ho jata h bahut tasks hone pr
+        // function getData(dataid){
+        //     setTimeout( ()=>{
+        //         console.log("data",dataid);
+        //     },2000);
+        // }
+        // getData(1);
+        // getData(2);
+        // getData(3);
+        function getData(dataid,getnextdata){
+            setTimeout( ()=>{
+                console.log("data",dataid);
+                if(getnextdata){
+                    getnextdata();
+                }
+            },2000);
+        }
+        getData(1,()=>{
+            getData(2,()=>{
+                getData(3,()=>{
+                    getData(4);
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

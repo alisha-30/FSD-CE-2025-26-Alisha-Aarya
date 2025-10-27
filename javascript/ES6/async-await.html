@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <!-- async-await is advanced version of promise, multiple then se bachne k liye use krte h -->
+     <script>
+        async function f(){
+            let promise = new Promise((resolve,reject)=>{
+            setTimeout(()=>resolve("done"),2000)
+            });
+            let result = await promise;
+            alert(result);
+        }
+        f();
+        
+     </script>
+</body>
+</html>

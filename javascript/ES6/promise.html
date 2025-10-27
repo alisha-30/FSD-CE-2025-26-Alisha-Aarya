@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+    <script>
+        //promise is used to solve the problem of nested callback.
+        // It is a advantage of nested callback
+        //Two parameters are passed- promise reject and promise resolve
+        //Promise(resolve,reject){ only 2 states avail resolve and reject
+        // .then or .catch se acess krte h}
+        const mypromise = new Promise((resolve,reject)=>{
+            const password = "alisha@123";
+            if(password.length>8){
+                resolve("password length is ok");
+            }
+            else{
+                reject("password is shorter in length");
+            }
+        })
+        // console.log(mypromise);
+
+        mypromise.then((msg)=>{ //then means value/condition true if error comes then catch reolve
+            console.log(msg);
+        })
+        mypromise.catch((err)=>{ //catch means value false
+            console.log(err);
+        })
+        //finally means chahe true ho ya false but agar ek baar likh liya toh printt jrur hoga
+        .finally(()=>{
+            console.log("we are coders");
+        })
+    </script>
+</body>
+</html>

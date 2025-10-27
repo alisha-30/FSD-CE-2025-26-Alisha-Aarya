@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        //callback- ek function me jb dusra function as a parameter pass krte h
+        function sum(a,b){
+            console.log(a+b);
+        }
+        function cal(a,b,sumcallback){
+            sumcallback(a,b);
+        }
+        cal(10,20,sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div id="root">
+        <!-- <div>
+            <h1>ABES</h1>
+        </div> -->
+    </div>
+
+    <!-- <script src="Dom.js"></script> -->
+    <!-- virtual dom using react cdn link which needs internet to run -->
+     <!-- internet and fluctuations se bachne k liye node modules use krte h taaki bina net k bhi easily project work kre -->
+    <!-- React mein node_modules ek folder hota hai jismein sabhi dependencies store hoti hain jo project ko chalane ke liye zaroori hoti hain. Ye folder React app ke setup ke time automatically generate hota hai. -->
+     <!-- public me additional pics
+     git ignore me voh files daalte h jo git k andar nhi chahiye -->
+     <!-- index.html me main work krenge and eslint config me working configuration js
+     package.json mein folder jo create kiya uski details
+     src main file usme assets me audio video files,app.css me style 
+     app.jsx me coding aur main.jsx mein component create and use call app.jsx me krenge -->
+
+    <script type="text/babel">
+        const Hello=<h1>students of CE</h1>
+        ReactDOM.render(Hello, document.getElementById("root"))
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- baable is used for converter as react k inside html code nhi chlega voh jsx code leta h toh html k code ko jsx me convert krta h -->
+</body>
+</html>
